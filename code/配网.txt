@@ -1,0 +1,39 @@
+#include <ESP8266WiFi.h>
+#define LED 2 //定义开发板上LED的IO
+void smartConfig()
+{
+  WiFi.mode(WIFI_STA); //设置WIFI模块为STA模式
+  Serial.println("\r\nWaiting for connection");
+  //smartconfig进行初始化
+  WiFi.beginSmartConfig();
+  while (1) //等待连接成功 ，如果未连接成功LED就每隔500ms闪烁
+  {
+    Serial.print(">");
+    digitalWrite(LED, 0);
+    delay(500);
+    digitalWrite(LED, 1);
+    delay(500);
+    //如果连接成功后就打印出连接的WIFI信息
+    if (WiFi.smartConfigDone())
+    {
+      Serial.println("Success");
+      Serial.printf("SSID:%s", WiFi.SSID().c_str());
+      Serial.printf("PW:%s", WiFi.psk().c_str());//打印出密码
+      break;
+    }
+  }
+}
+
+void setup()
+{
+  Serial.begin(9600);//设置波特率为9600
+  Serial.println("Esp8266 is OK \r\n");
+  pinMode(LED, OUTPUT);   //设置LED的工作模式
+  digitalWrite(LED, 0);
+  smartConfig(); //调用SmartConfig函数进行配网
+}
+
+void loop()
+{
+  delay(300);
+}
