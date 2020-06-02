@@ -1,0 +1,34 @@
+<view class="main">
+<!-- <switch bindchange="onChangeShowState"  >智能</switch> 
+
+ <view class="bright789_view_hide{{showView?'bright789_view_show':''}}">
+ <switch bindchange="addWater">加水</switch>
+ </view> -->
+
+<view class="root">
+  <view class="content">
+    <view class="slide">
+      <image src=""></image>
+    </view>
+    <view class="protals">
+      <view class="item">
+        <view class="zujian">
+        <text>当前心跳</text>
+        </view>
+        <view class="zujian">
+          <text>{{humidity}}</text>
+        </view>
+      </view>
+    </view>
+
+ <view>
+      <canvas style="width: 400px; height: 200px;" canvas-id="yueEle" binderror="canvasIdErrorCallback"></canvas>
+    </view>
+
+
+
+</view>
+        
+</view>
+
+</view>

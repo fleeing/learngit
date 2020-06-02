@@ -1,0 +1,37 @@
+.bright789-text{
+ font-size: 40rpx;
+ line-height: 40px;
+ color: #ff0000;
+}
+.bright789_view_hide{
+ display: none;
+}
+.bright789_view_show{
+ display: block;
+}
+
+.root{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content{
+  flex: 1;
+  overflow: hidden;
+}
+.slide image{
+  width: 100%;
+  height: 200px;
+}
+.protals{
+  margin: 20px;
+}
+.protals .item{
+  display: flex;
+  flex: 50%;
+  margin: 30px;
+}
+.zujian{
+  flex: 50%;
+  text-align: center;
+}
